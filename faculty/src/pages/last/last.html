@@ -1,0 +1,50 @@
+<ion-header align="center">
+  <ion-navbar padding align="center" >
+    <div padding>
+        <ion-segment [(ngModel)]="attendance" id="attendance">
+          <ion-segment-button value="all" id="allb">
+            All
+          </ion-segment-button>
+          <ion-segment-button value="present" id="presentb">
+            Present
+          </ion-segment-button>
+          <ion-segment-button value="absent" id="absentb">
+            Absent
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="submit" style="background-image:url('http://iphone7papers.com/wp-content/uploads/papers.co-sa52-blurred-white-blur-wallpaper-33-iphone6-wallpaper-250x444.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <div [ngSwitch]="attendance">
+
+      <ion-list *ngSwitchCase="'all'" id="all">
+        <ion-item>
+            <label class = "checkbox" >
+                17se02ce001
+                  <input type = "checkbox" radio-group="a">
+            </label>        
+        </ion-item>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'present'" id="present">
+        <ion-item>
+            <label class = "checkbox" >
+                17se02ce002
+                  <input type = "checkbox" radio-group="b">
+            </label>        
+        </ion-item>
+        </ion-list>
+
+      <ion-list *ngSwitchCase="'absent'" id="absent">
+        <ion-item>
+            <label class = "checkbox" >
+                17se02ce003
+                  <input type = "checkbox" radio-group="c">
+             </label>  
+        </ion-item>
+     </ion-list>
+     
+  </div>
+</ion-content>

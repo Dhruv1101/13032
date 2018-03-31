@@ -1,0 +1,71 @@
+<ion-header align="center" color="primary">
+  <ion-navbar padding align="center" color="primary">
+</ion-navbar>
+</ion-header>
+<ion-content padding class="submit" style="background-image:url('http://iphone7papers.com/wp-content/uploads/papers.co-sa52-blurred-white-blur-wallpaper-33-iphone6-wallpaper-250x444.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <ion-item color = "primary" style="border-radius:20px;" id="date" >
+      <ion-label>Date:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>  
+    <br>
+    <div class = "input-label" id="facultyname">
+      Name: <select>
+        <option selected>select</option>
+        <option>Divyang Gor</option>
+        <option>Deven Ramani</option>
+        <option>Aashish Jani</option>
+        <option>Pankaj Gandhi</option>
+        <option>Gaurav Thakarar</option>
+     </select>
+   </div>
+<br>
+  <div class = "input-label" id="branch">
+      Branch: <select>
+        <option selected>select</option>
+        <option>computer enginerring</option>
+        <option >mechanical engineering</option>
+        <option>civil engineering</option>
+        <option>chemical engineering</option>
+        <option>IT</option>
+
+     </select>
+   </div><br>
+   <div class = "input-label" id="sem">
+      Semester: <select>
+        <option selected>select</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        </select>
+   </div><br>
+   <div class = "input-label" id="sub">
+      Subject Name: <select>
+        <option selected>select</option>
+        <option>Subject1</option>
+        <option>Subject2</option></select>
+    </div><br>
+    <div class = "list" id="lectureType">
+        Theory: <input type = "radio" name = "group1"> &nbsp;&nbsp;&nbsp;
+        Practical:  <input type = "radio" name = "group1" />
+    </div><br>
+    <div class = "input-label" id="lectureNo">
+      Lecture no. <select>
+        <option selected>select</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        </select>
+    </div>
+<button style="margin-top: 15px;height: 35px;font-size: 14px;background: primary; box-shadow:none;" ion-button  block  (click)="submit()" id="submit">SUBMIT</button>
+
+     
+</ion-content>

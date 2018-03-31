@@ -1,0 +1,41 @@
+<style type="text/css">
+  ::-webkit-input-placeholder {
+    color: rgb(90, 88, 88) !important; 
+    
+  }
+  :-moz-placeholder {
+    color: rgb(90, 88, 88) !important; 
+  }
+  :-ms-input-placeholder {
+    /* IE10+ */
+    color: rgb(90, 88, 88) !important; 
+  }
+  </style>
+  
+  <ion-content padding class="login" style="background-image:url('http://iphone7papers.com/wp-content/uploads/papers.co-sa52-blurred-white-blur-wallpaper-33-iphone6-wallpaper-250x444.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4 style="margin-left: auto;margin-right: auto;display: block;">
+          <img src="../assets/imgs/ppsulogo.jpg" style="width:100%;height:auto" id="ppsulogo">
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-list class="list-form" style="margin-top:30px;margin-bottom: 30px">
+        
+      <ion-item style="padding:0px !important; font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid rgb(80, 79, 79);box-shadow:none;">
+        <ion-input style="color:rgb(8, 8, 8);border-bottom-color:blue;box-shadow:none;" type="text" placeholder="Username" id="username"></ion-input>
+        </ion-item>
+      <ion-item style="padding:0px !important; font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid rgb(80, 79, 79);box-shadow:none;">
+          <ion-input style="color:black;border-bottom-color:blue;box-shadow:none;" type="password" placeholder="Password" id="password"></ion-input>
+        </ion-item>
+  
+    </ion-list>
+  
+    <button style="margin-top: 15px;height: 35px;font-size: 14px;background: primary;" ion-button  block  (click)="login()" id="login">LOGIN</button>
+  </ion-content>
+  
+  

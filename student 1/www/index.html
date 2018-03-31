@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no,
+		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>ATTANDANCE</title>
+
+	<style>
+		@import 'ui/css/evothings-app.css';
+	</style>
+
+	<script>
+	// Redirect console.log to Evothings Workbench.
+	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	</script>
+
+	<script src="cordova.js"></script>
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="libs/evothings/evothings.js"></script>
+	<script src="libs/evothings/ui/ui.js"></script>
+	<script src="app.js"></script>
+	
+
+	<script>
+		  // Initialize Firebase
+		  var config = {
+			    apiKey: "AIzaSyD4_21tBtZYPF7RTqQamc0hRxsanGZT0mE",
+			    authDomain: "attendance-aa43f.firebaseapp.com",
+			    databaseURL: "https://attendance-aa43f.firebaseio.com/",
+			    projectId: "attendance-aa43f",
+			    storageBucket: "gs://attendance-aa43f.appspot.com/",
+			    messagingSenderId: "819204663791"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+
+
+<script>
+	{
+		
+		var d= new Date();
+            var curr_date = d.getDate();
+            var curr_month = d.getMonth() +1;
+            var curr_year= d.getFullYear();
+            var cdate= curr_date+"-"+curr_month+"-"+curr_year;
+
+            var branch= "CE";
+            var department="Sem2";
+            var lno="3";
+			var student="sanket";
+
+
+		function savefirebase()
+	{
+
+     ("Cordova version: " + device.cordova + "\n" +
+               "Device model: " + device.model + "\n" +
+               "Device platform: " + device.platform + "\n" +
+               "Device UUID: " + device.uuid + "\n" +
+               "Device version: " + device.version);
+            
+            
+        alert("YOUR ATTENDANCE IS SUCESSFULLY MARKED");
+        var sd = firebase.database().ref("Brach").child(branch).child(department).child(cdate).child(lno).child("17SE02CE010").child("status");
+        sd.set("present");
+        var bd = firebase.database().ref("Brach").child(branch).child(department).child(cdate).child(lno).child("17SE02CE010").child("device uuid");
+        bd.set(device.uuid);
+        var ad = firebase.database().ref("Brach").child(branch).child(department).child(cdate).child(lno).child("17SE02CE010").child("Student Name");
+        ad.set("jenish");
+
+    } 
+}
+</script>
+
+</head>
+
+<body>
+
+	<header>
+		<button class="back" onclick="history.back()">
+			<img src="ui/images/arrow-left.svg" />
+		</button>
+
+		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
+
+		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
+	</header>
+
+	<h1>AN IMPORTANT MESSAGE FOR YOU</h1>
+	<p id="warning">PLEASE GO TO YOUR RESPECTIVE CLASS ROOM OR PLEASE TURN YOUR MOBILE BLURTOOTH
+	</p>
+	<ul id="found-beacons" class="dynamic"></ul>
+	<button onClick= "savefirebase()">MARK YOUR ATTENDANCE</button>
+</body>
+
+</html>
